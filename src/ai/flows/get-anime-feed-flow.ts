@@ -12,7 +12,7 @@ import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import { mockShows } from '@/lib/mock-data';
 import type { Show } from '@/types';
-import { ShowSchema } from '@/types/schemas';
+import { ShowSchema } from '@/types'; // Updated import path
 
 // Define Input Schema
 const GetAnimeFeedInputSchema = z.object({
