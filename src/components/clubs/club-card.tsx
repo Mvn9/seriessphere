@@ -8,10 +8,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Users, MessageSquare } from "lucide-react";
 import type { Club } from "@/types";
+import { ClubChatPreview } from "./club-chat-preview";
 
 interface ClubCardProps {
   club: Club;
@@ -48,10 +57,23 @@ export function ClubCard({ club }: ClubCardProps) {
         </div>
       </CardContent>
       <CardFooter className="p-4 border-t flex gap-2">
-        <Button variant="outline" className="flex-1">
-          <MessageSquare className="mr-2 h-4 w-4" />
-          Discussions
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline" className="flex-1">
+              <MessageSquare className="mr-2 h-4 w-4" />
+              View Chat Preview
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[600px] p-0 max-h-[80vh] flex flex-col">
+            <DialogHeader className="p-6 pb-2">
+              <DialogTitle>{club.name} - Chat Preview</DialogTitle>
+              <DialogDescription>
+                This is a preview of the club chat. Full functionality coming soon!
+              </DialogDescription>
+            </DialogHeader>
+            <ClubChatPreview clubName={club.name} />
+          </DialogContent>
+        </Dialog>
         <Button className="flex-1 bg-primary hover:bg-primary/90">Join Club</Button>
       </CardFooter>
     </Card>
