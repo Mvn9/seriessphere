@@ -1,5 +1,5 @@
 
-import type { Show, Club, ShowStatus } from "@/types";
+import type { Show, Club } from "@/types";
 
 export const mockShows: Show[] = [
   {
@@ -84,6 +84,47 @@ export const mockShows: Show[] = [
     userScore: 9,
     releaseYear: 2023,
   },
+  {
+    id: "7",
+    title: "Attack on Titan",
+    description: "Humanity fights for survival against giant man-eating humanoids. Many plot twists and character developments.",
+    coverImageUrl: "https://picsum.photos/seed/aot/300/450",
+    totalEpisodes: 87,
+    watchedEpisodes: 87,
+    status: "Completed",
+    genres: ["Anime", "Action", "Dark Fantasy", "Post-apocalyptic"],
+    rating: 9.0,
+    spoilersVisible: true,
+    userScore: 10,
+    releaseYear: 2013,
+  },
+  {
+    id: "8",
+    title: "Jujutsu Kaisen",
+    description: "A boy swallows a cursed talisman - the finger of a demon - and becomes cursed himself. He enters a shaman's school to be able to locate the demon's other body parts and thus exorcise himself.",
+    coverImageUrl: "https://picsum.photos/seed/jjk/300/450",
+    totalEpisodes: 47, 
+    watchedEpisodes: 24, 
+    status: "Watching",
+    genres: ["Anime", "Supernatural", "Action", "Dark Fantasy"],
+    rating: 8.7,
+    spoilersVisible: false,
+    userScore: 9,
+    releaseYear: 2020,
+  },
+  {
+    id: "9",
+    title: "Frieren: Beyond Journey's End",
+    description: "After a ten-year quest, an elf mage and her companions defeat the Demon King. Now, Frieren must face the fleeting nature of time and the mortality of her friends.",
+    coverImageUrl: "https://picsum.photos/seed/frieren/300/450",
+    totalEpisodes: 28, 
+    watchedEpisodes: 0, 
+    status: "Plan to Watch",
+    genres: ["Anime", "Fantasy", "Adventure", "Slice of Life"],
+    rating: 9.4, 
+    spoilersVisible: false,
+    releaseYear: 2023, 
+  }
 ];
 
 export const mockClubs: Club[] = [
@@ -120,3 +161,4 @@ export const mockClubs: Club[] = [
     tags: ["Thriller", "Mystery", "Suspense", "Crime"],
   },
 ];
+

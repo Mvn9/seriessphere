@@ -38,3 +38,4 @@ export interface Club {
   coverImageUrl: string;
   tags: string[];
 }
+
