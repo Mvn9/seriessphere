@@ -124,6 +124,58 @@ export const mockShows: Show[] = [
     rating: 9.4, 
     spoilersVisible: false,
     releaseYear: 2023, 
+  },
+  {
+    id: "10",
+    title: "Chainsaw Man",
+    description: "Denji has a simple dream—to live a happy and peaceful life. This is a far cry from reality, as Denji is forced by the yakuza into killing devils to pay off his debts.",
+    coverImageUrl: "https://picsum.photos/seed/csm/300/450",
+    totalEpisodes: 12,
+    watchedEpisodes: 0,
+    status: "Plan to Watch",
+    genres: ["Anime", "Action", "Dark Fantasy", "Supernatural"],
+    rating: 8.9,
+    spoilersVisible: false,
+    releaseYear: 2022,
+  },
+  {
+    id: "11",
+    title: "Spy x Family",
+    description: "A spy on an undercover mission gets married and adopts a child, not realizing his new wife is an assassin and his new daughter is a telepath.",
+    coverImageUrl: "https://picsum.photos/seed/spyxfamily/300/450",
+    totalEpisodes: 25, // Season 1 total, can be updated if more seasons are covered
+    watchedEpisodes: 0,
+    status: "Plan to Watch",
+    genres: ["Anime", "Comedy", "Action", "Slice of Life"],
+    rating: 8.6,
+    spoilersVisible: false,
+    releaseYear: 2022,
+  },
+  {
+    id: "12",
+    title: "Vinland Saga Season 2",
+    description: "Thorfinn seeks a new purpose in life after the death of Askeladd, journeying to find Vinland, while new conflicts arise.",
+    coverImageUrl: "https://picsum.photos/seed/vinland2/300/450",
+    totalEpisodes: 24,
+    watchedEpisodes: 0,
+    status: "Plan to Watch",
+    genres: ["Anime", "Action", "Adventure", "Drama", "Historical"],
+    rating: 9.1,
+    spoilersVisible: false,
+    releaseYear: 2023,
+  },
+  {
+    id: "13",
+    title: "Solo Leveling",
+    description: "In a world where hunters with magical abilities battle deadly monsters to protect humanity, a notoriously weak hunter gains extraordinary power.",
+    coverImageUrl: "https://picsum.photos/seed/sololeveling/300/450",
+    totalEpisodes: 12, // For Season 1
+    watchedEpisodes: 0,
+    status: "Plan to Watch",
+    genres: ["Anime", "Action", "Fantasy", "Adventure"],
+    rating: 8.5, // Hypothetical, as it's new
+    spoilersVisible: false,
+    releaseYear: 2024,
   }
 ];
 
@@ -161,4 +213,3 @@ export const mockClubs: Club[] = [
     tags: ["Thriller", "Mystery", "Suspense", "Crime"],
   },
 ];
-
