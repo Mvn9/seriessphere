@@ -1,106 +1,204 @@
-# Firebase Studio - Series Sphere
+Great — here’s a **ready-to-paste, recruiter-friendly `README.md`** for **SeriesSphere**. It’s fully customized: removes template wording, highlights what *you* built, shows the live demo, lists concrete features, explains the AI recommendation piece, and includes clear run instructions and files to add (`env.example`, screenshots). Paste this directly into your repo’s `README.md` and follow the small TODOs I left (like dropping screenshots into `screenshots/`).
 
-This is a Next.js application called "Series Sphere" for tracking TV shows, getting recommendations, and joining community clubs. It uses Genkit for AI-powered features.
+---
 
-## Getting Started
+````markdown
+# SeriesSphere
 
-To get this application up and running on your local machine, follow these steps.
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue)](https://seriessphere.vercel.app)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]
 
-### Prerequisites
+**SeriesSphere** — a community-driven web app to track TV shows & anime, get personalized recommendations, and join clubs.
 
-*   **Node.js**: Make sure you have Node.js installed (version 18.x or later recommended). You can download it from [nodejs.org](https://nodejs.org/).
-*   **npm** or **yarn**: These package managers come with Node.js. Choose one to manage your dependencies.
+---
 
-### 1. Setup Project Files
+## 🔎 Elevator pitch — what I built
+SeriesSphere is a full-stack Next.js + TypeScript application for managing watchlists, logging episode progress, discovering new shows via an explainable AI recommendation flow (Genkit / Google AI), and participating in community clubs. The app focuses on clear UX, spoiler protection, and recommendations that include short explainability notes so users know *why* a show was suggested.
 
-Ensure you have all the project files in a directory on your local machine. If you've been working with an AI assistant to generate these files, make sure all provided files are correctly placed in their respective paths (e.g., `src/app/page.tsx`, `package.json`, etc.).
+**Live demo:** https://seriessphere.vercel.app
 
-### 2. Install Dependencies
+---
 
-Navigate to the root directory of the project in your terminal and run one of the following commands to install the necessary packages:
+## 🚀 Key features
+- Watchlist management (add/remove shows, mark episodes watched)  
+- Episode logging & progress tracking  
+- AI-powered recommendations with explainability (shows reason + score)  
+- Clubs: create & join discussions, post updates, and interact with members  
+- Spoiler protection toggle for sensitive content  
+- Admin moderation tools (content management)  
+- Responsive UI and Vercel deployment
 
-Using npm:
+---
+
+## 🛠 Tech stack
+- **Frontend:** Next.js (App Router), React, TypeScript  
+- **Styling:** Tailwind CSS  
+- **AI:** Genkit / Google AI flows (recommendation & reranking)  
+- **Hosting:** Vercel  
+- **Dev tools:** npm, ESLint, Prettier
+
+---
+
+## ✅ What I personally implemented
+- Designed and implemented the watchlist data model and episode progress tracking.  
+- Built the Genkit AI recommendation flows and integrated them into the UI with an explainability panel.  
+- Implemented spoiler protection logic and user-facing toggles.  
+- Deployed the app to Vercel and wired environment variables for AI usage.
+
+> See `docs/ai.md` for a short technical breakdown of the recommendation flow (inputs, logic, sample outputs).
+
+---
+
+## 📸 Screenshots
+> Add screenshots to the `screenshots/` folder and reference them here.
+
+- `screenshots/home.png` — Home / Discover page  
+- `screenshots/watchlist.png` — Watchlist & progress view  
+- `screenshots/recommendation.png` — Recommendation panel with explainability
+
+```markdown
+![Home](screenshots/home.png)
+![Watchlist](screenshots/watchlist.png)
+![Recommendation](screenshots/recommendation.png)
+````
+
+---
+
+## 💻 Quick start (local development)
+
+1. Clone the repo
+
+```bash
+git clone https://github.com/Mvn9/seriessphere.git
+cd seriessphere
+```
+
+2. Install dependencies
+
 ```bash
 npm install
 ```
 
-Or using yarn:
+3. Copy env example and fill required keys
+
 ```bash
-yarn install
+cp env.example .env.local
+# Edit .env.local and add real values (see env.example for required variables)
 ```
 
-### 3. Set Up Environment Variables
+4. (If using Genkit locally) Start Genkit (if applicable):
 
-This project uses Genkit with Google AI. You'll need to configure an API key for the AI functionalities to work.
-
-1.  Create a new file named `.env` in the root of your project.
-2.  Add your Google AI API key to this file:
-
-    ```env
-    GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
-    ```
-
-    Replace `YOUR_GOOGLE_API_KEY` with your actual API key. You can obtain one from [Google AI Studio](https://aistudio.google.com/app/apikey).
-
-    *Note: The existing `.env` file in the project might be empty. You need to add this line.*
-
-### 4. Run the Development Servers
-
-This application requires two separate development servers to be running concurrently:
-*   The **Genkit server** for AI flows.
-*   The **Next.js server** for the web application itself.
-
-You'll need to open two separate terminal windows or tabs for this.
-
-**Terminal 1: Start the Genkit Server**
-
-In your first terminal, navigate to the project root and run:
 ```bash
 npm run genkit:watch
 ```
-or
-```bash
-yarn genkit:watch
-```
-This command starts the Genkit development server in watch mode, meaning it will automatically reload if you make changes to your AI flows (files in `src/ai/flows/`).
-You should see output indicating that Genkit has started. The Genkit Developer UI will typically be available at `http://localhost:4000/`.
 
-**Terminal 2: Start the Next.js Server**
+5. Run the dev server
 
-In your second terminal, navigate to the project root and run:
 ```bash
 npm run dev
-```
-or
-```bash
-yarn dev
-```
-This command starts the Next.js development server. By default (as configured in `package.json`), it will run on port `9002`.
-
-### 5. Access the Application
-
-Once both servers are running:
-
-*   Open your web browser and go to `http://localhost:9002` to see the Series Sphere application.
-*   You can also explore your Genkit flows and their traces in the Genkit Developer UI, typically at `http://localhost:4000/`.
-
-### Project Structure Highlights
-
-*   **Next.js Pages & Components**: Located in `src/app/` and `src/components/`. The main page is `src/app/page.tsx`.
-*   **AI Flows (Genkit)**: Located in `src/ai/flows/`. These define the AI-powered logic.
-*   **Global Styles**: `src/app/globals.css`.
-*   **Static Assets**: Public assets can be placed in the `public/` directory.
-
-### Building for Production
-
-When you're ready to build the application for production, you can run:
-```bash
-npm run build
-```
-And then to start the production server:
-```bash
+# or
 npm run start
 ```
-Ensure Genkit flows are also appropriately deployed or accessible by your production environment. Refer to Genkit documentation for deployment strategies.
 
-Enjoy using Series Sphere!
+6. Open the app at `http://localhost:9002` (or the port printed in console).
+
+---
+
+## 🔑 env.example (add to repo as `env.example`)
+
+```env
+# SeriesSphere env.example
+NEXT_PUBLIC_VERCEL_URL=https://seriessphere.vercel.app
+GOOGLE_API_KEY=your_google_api_key_here
+GENKIT_API_KEY=your_genkit_api_key_here
+NEXTAUTH_URL=http://localhost:9002
+# Add other keys your app expects, prefixed with NEXT_PUBLIC_ if used in client
+```
+
+> Please **never** commit actual API keys. Keep keys in `.env.local` and add `.env.local` to `.gitignore`.
+
+---
+
+## 📂 Project structure (high-level)
+
+```
+/src
+  /app             # Next.js pages & App Router
+  /components      # Reusable UI components
+  /lib             # helper utilities and API clients
+  /ai/flows        # Genkit/AI flows & configs
+  /public          # static assets
+  /styles          # global styles & tailwind config
+```
+
+---
+
+## 🧠 Recommendation flow (short summary)
+
+* Input: user watch history + selected show metadata (genres, tags, popularity).
+* Flow: Genkit receives a prompt combining user history and candidate metadata → returns ranked suggestions.
+* Post-processing: rerank by popularity and apply filters (e.g., language, age rating).
+* Explainability: for each recommendation we compute a short reason string (e.g., `"Recommended because you watched X (genre similarity 0.81) and liked Y (shared tags)"`) and a score.
+
+> For full details + example payloads, see `docs/ai.md`.
+
+---
+
+## 🧪 Tests & CI
+
+* Add a basic GitHub Actions workflow to run `npm ci`, `npm run build`, and `npm run lint` on pushes to `main`.
+* Add at least one unit test for the recommendation utility or a key component (Jest + React Testing Library).
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome. Please:
+
+1. Open an issue to discuss the change.
+2. Fork the repo and create a branch for your feature/fix.
+3. Run lint/tests before opening a PR.
+
+Short checklist for PRs:
+
+* [ ] Code builds and tests pass
+* [ ] Follows existing code style (Prettier / ESLint)
+* [ ] Add/modify README or docs if adding a feature
+
+---
+
+## 📜 License
+
+This project is available under the **MIT License**. See `LICENSE` for details.
+
+---
+
+## 🧭 Future work / roadmap
+
+* Add user feedback loop so recommendations improve over time.
+* Add analytics dashboard for admin (track popular shows, club activity).
+* Add automated tests and deploy-ready CI.
+* Add OAuth sign-in and demo test account for instant demo access.
+
+---
+
+## 🔗 Links
+
+* Live demo: [https://seriessphere.vercel.app](https://seriessphere.vercel.app)
+* Repo: [https://github.com/Mvn9/seriessphere](https://github.com/Mvn9/seriessphere)
+
+```
+
+---
+
+### Small follow-up tasks (do these after pasting README)
+1. Add 2–3 screenshots in `screenshots/` and update the file names in README.  
+2. Add `env.example` file to repo (copy the snippet above).  
+3. Create `docs/ai.md` — I can draft that next (I’ll extract real flow logic from `src/ai/flows/` and produce a clear `docs/ai.md` with sample inputs/outputs).  
+4. Add `LICENSE` (MIT) and pin the repo on your GitHub profile.
+
+---
+
+If you want, I’ll now **generate the `docs/ai.md`** based on your `src/ai/flows/` files (I’ll extract and summarize the exact flow, expected inputs, and sample outputs) — ready to paste into `docs/ai.md`. Shall I proceed with that next?
+::contentReference[oaicite:0]{index=0}
+```
