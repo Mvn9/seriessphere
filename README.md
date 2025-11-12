@@ -191,14 +191,4 @@ This project is available under the **MIT License**. See `LICENSE` for details.
 
 ---
 
-### Small follow-up tasks (do these after pasting README)
-1. Add 2–3 screenshots in `screenshots/` and update the file names in README.  
-2. Add `env.example` file to repo (copy the snippet above).  
-3. Create `docs/ai.md` — I can draft that next (I’ll extract real flow logic from `src/ai/flows/` and produce a clear `docs/ai.md` with sample inputs/outputs).  
-4. Add `LICENSE` (MIT) and pin the repo on your GitHub profile.
 
----
-
-If you want, I’ll now **generate the `docs/ai.md`** based on your `src/ai/flows/` files (I’ll extract and summarize the exact flow, expected inputs, and sample outputs) — ready to paste into `docs/ai.md`. Shall I proceed with that next?
-::contentReference[oaicite:0]{index=0}
-```
