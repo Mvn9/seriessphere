@@ -50,9 +50,7 @@ SeriesSphere is a full-stack Next.js + TypeScript application for managing watch
 ---
 
 ## 📸 Screenshots
-> Add screenshots to the `screenshots/` folder and reference them here.
 
-- `screenshots/home.png` — Home / Discover page  
 - `screenshots/watchlist.png` — Watchlist & progress view  
 - `screenshots/recommendation.png` — Recommendation panel with explainability
 
