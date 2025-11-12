@@ -1,12 +1,9 @@
-Great — here’s a **ready-to-paste, recruiter-friendly `README.md`** for **SeriesSphere**. It’s fully customized: removes template wording, highlights what *you* built, shows the live demo, lists concrete features, explains the AI recommendation piece, and includes clear run instructions and files to add (`env.example`, screenshots). Paste this directly into your repo’s `README.md` and follow the small TODOs I left (like dropping screenshots into `screenshots/`).
 
----
-
-````markdown
 # SeriesSphere
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-blue)](https://seriessphere.vercel.app)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]
+![CI](https://github.com/Mvn9/seriessphere/actions/workflows/ci.yml/badge.svg)
 
 **SeriesSphere** — a community-driven web app to track TV shows & anime, get personalized recommendations, and join clubs.
 
